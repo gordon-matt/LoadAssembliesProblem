@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Doxie\Core\XmlComments\Schema.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Doxie\Core\XmlComments\Schema.xsd" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="SomeArbitraryPath\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extenso.Core" Version="1.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
+</Project>

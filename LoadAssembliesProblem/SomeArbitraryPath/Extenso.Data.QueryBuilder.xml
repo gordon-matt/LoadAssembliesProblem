@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Extenso.Data.QueryBuilder</name>
+    </assembly>
+    <members>
+        <member name="T:Extenso.Data.QueryBuilder.ComparisonOperator">
+            <summary>
+            Represents comparison operators for WHERE, HAVING and JOIN clauses
+            </summary>
+        </member>
+        <member name="T:Extenso.Data.QueryBuilder.JoinClause">
+            <summary>
+            Represents a JOIN clause to be used with SELECT statements
+            </summary>
+        </member>
+        <member name="T:Extenso.Data.QueryBuilder.LogicOperator">
+            <summary>
+            Represents logic operators for chaining WHERE and HAVING clauses together in a statement
+            </summary>
+        </member>
+        <member name="T:Extenso.Data.QueryBuilder.OrderByClause">
+            <summary>
+            Represents a ORDER BY clause to be used with SELECT statements
+            </summary>
+        </member>
+    </members>
+</doc>

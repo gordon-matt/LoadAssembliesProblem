@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Extenso.AspNetCore.OData</name>
+    </assembly>
+    <members>
+        <member name="M:Extenso.Web.OData.GenericODataController`2.SetNewId(`0)">
+            <summary>
+            Should only be necessary for Guid types
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Extenso.Web.OData.GenericODataController`2.ApplyMandatoryFilter(System.Linq.IQueryable{`0})">
+            <summary>
+            Add any filters which must be applied for the client. Mostly used for fields such as "TenantId", where you don't want
+            the user viewing data for a different site (tenant)
+            </summary>
+            <param name="entity"></param>
+        </member>
+    </members>
+</doc>

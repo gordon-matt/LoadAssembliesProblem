@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Extenso.Data</name>
+    </assembly>
+    <members>
+        <member name="P:Extenso.Data.ColumnInfo.IsAutoIncremented">
+            <summary>
+            MSSQL: IDENTITY, PG: Sequence, etc..
+            </summary>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.Insert``1(System.Data.Common.DbConnection,``0,System.String)">
+            <summary>
+            <para>Inserts the specified entity into the specified Table. Property names are used to match</para>
+            <para>with Sql Column Names.</para>
+            </summary>
+            <typeparam name="T">The type of entity to persist to Sql database.</typeparam>
+            <param name="connection">This DbConnection.</param>
+            <param name="entity">The entity to persist to Sql database.</param>
+            <param name="tableName">The table to insert the entity into.</param>
+            <returns>Number of rows affected.</returns>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.Insert``1(System.Data.Common.DbConnection,``0,System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            <para>Inserts the specified entity into the specified Table. Properties are matched</para>
+            <para>with Sql Column Names by using the specified mappings dictionary.</para>
+            </summary>
+            <typeparam name="T">The type of entity to persist to Sql database.</typeparam>
+            <param name="connection">This DbConnection.</param>
+            <param name="entity">The entity to persist to Sql database.</param>
+            <param name="tableName">The table to insert the entity into.</param>
+            <param name="mappings">
+                <para>A Dictionary to use to map properties to Sql columns.</para>
+                <para>Key = Property Name, Value = Sql Column Name.</para>
+            </param>
+            <returns>Number of rows affected.</returns>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.InsertCollection``1(System.Data.Common.DbConnection,System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            <para>Inserts the specified entities into the specified Table. Property names are used to match</para>
+            <para>with Sql Column Names.</para>
+            </summary>
+            <typeparam name="T">The type of entity to persist to Sql database.</typeparam>
+            <param name="connection">This DbConnection.</param>
+            <param name="entities">The entities to persist to Sql database.</param>
+            <param name="tableName">The table to insert the entities into.</param>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.InsertCollection``1(System.Data.Common.DbConnection,System.Collections.Generic.IEnumerable{``0},System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            <para>Inserts the specified entities into the specified Table. Properties are matched</para>
+            <para>with Sql Column Names by using the specified mappings dictionary.</para>
+            </summary>
+            <typeparam name="T">The type of entity to persist to Sql database.</typeparam>
+            <param name="connection">This DbConnection.</param>
+            <param name="entities">The entities to persist to Sql database.</param>
+            <param name="tableName">The table to insert the entities into.</param>
+            <param name="mappings">
+                <para>A Dictionary to use to map properties to Sql columns.</para>
+                <para>Key = Property Name, Value = Sql Column Name.</para>
+            </param>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.Validate(System.Data.Common.DbConnection)">
+            <summary>
+            Tries to establish a connection.
+            </summary>
+            <param name="connection">The DbConnection</param>
+            <returns>True if successful. Otherwise, false</returns>
+        </member>
+        <member name="M:Extenso.Data.Common.DbConnectionExtensions.Validate(System.Data.Common.DbConnection,System.Byte)">
+            <summary>
+            Tries to establish a connection.
+            </summary>
+            <param name="connection">The DbConnection</param>
+            <param name="maxTries">The number of times to try connecting.</param>
+            <returns>True if successful. Otherwise, false</returns>
+        </member>
+    </members>
+</doc>

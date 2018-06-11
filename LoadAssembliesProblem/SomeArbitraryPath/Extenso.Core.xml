@@ -1,0 +1,836 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Extenso.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Extenso.ByteArrayExtensions.BinaryDeserialize``1(System.Byte[])">
+            <summary>
+            Deserializes the Binary data contained in the specified System.Byte[].
+            </summary>
+            <typeparam name="T">The type of System.Object to be deserialized.</typeparam>
+            <param name="data">This System.Byte[] instance.</param>
+            <returns>The System.Object being deserialized.</returns>
+        </member>
+        <member name="M:Extenso.ByteArrayExtensions.RSAEncrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Boolean)">
+            <summary>
+            Encrypts data with the System.Security.Cryptography.RSA algorithm.
+            </summary>
+            <param name="bytes">The data to be encrypted.</param>
+            <param name="parameters">The parameters for System.Security.Cryptography.RSA.</param>
+            <param name="doOAEPPadding">
+            <para>true to perform direct System.Security.Cryptography.RSA encryption using</para>
+            <para>OAEP padding (only available on a computer running Microsoft Windows XP or</para>
+            <para>later); otherwise, false to use PKCS#1 v1.5 padding.</para>
+            </param>
+            <returns>The encrypted data.</returns>
+        </member>
+        <member name="M:Extenso.ByteArrayExtensions.RSADecrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Boolean)">
+            <summary>
+            Decrypts data with the System.Security.Cryptography.RSA algorithm.
+            </summary>
+            <param name="bytes">The data to be decrypted.</param>
+            <param name="parameters">The parameters for System.Security.Cryptography.RSA.</param>
+            <param name="doOAEPPadding">
+            <para>true to perform direct System.Security.Cryptography.RSA encryption using</para>
+            <para>OAEP padding (only available on a computer running Microsoft Windows XP or</para>
+            <para>later); otherwise, false to use PKCS#1 v1.5 padding.</para>
+            </param>
+            <returns>The decrypted data, which is the original plain text before encryption.</returns>
+        </member>
+        <member name="M:Extenso.ByteArrayExtensions.TripleDESDecrypt(System.Byte[],System.Text.Encoding,System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the specified System.Byte[] using the TripleDES symmetric algorithm and returns the original System.String.
+            </summary>
+            <param name="data">The encrypted data to decrypt.</param>
+            <param name="encoding">The System.Text.Encoding to use.</param>
+            <param name="key">The secret key to use for the symmetric algorithm.</param>
+            <param name="initializationVector">The initialization vector to use for the symmetric algorithm.</param>
+            <returns>Decrypted System.Byte[] as a System.String.</returns>
+        </member>
+        <member name="M:Extenso.CharExtensions.Repeat(System.Char,System.Int32)">
+            <summary>
+            <para>Takes a System.Char and returns a System.String of that System.Char</para>
+            <para>repeated [n] number of times</para>
+            </summary>
+            <param name="c">The Char</param>
+            <param name="count">The number of times to repeat the System.Char</param>
+            <returns>System.String of the specified System.Char repeated [n] number of times</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.ContainsAny``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Determines whether this collection contains any of the specified values
+            </summary>
+            <typeparam name="T">The type of the values to compare</typeparam>
+            <param name="t">This collection</param>
+            <param name="items">The values to compare</param>
+            <returns>true if the collection contains any of the specified values, otherwise false</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Performs the specified action on each element of the System.Collections.Generic.IEnumerable&lt;T&gt;.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <param name="action">The System.Action&lt;T&gt; delegate to perform on each element of the System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.IsNullOrEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Indicates whether the specified System.Collections.Generic.IEnumerable&lt;T&gt; is null or empty
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <returns>true if the System.Collections.Generic.IEnumerable&lt;T&gt; is null or empty; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.Join``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            <para>Returns all elements of this IEnumerable&lt;T&gt; in a single System.String.</para>
+            <para>Elements are separated by a comma.</para>
+            </summary>
+            <param name="values">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <returns>System.String containing elements from specified IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.Join``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            <para>Returns all elements of this IEnumerable&lt;T&gt; in a single System.String.</para>
+            <para>Elements are separated by the specified separator.</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="values">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <param name="separator">The System.String to use to separate each element.</param>
+            <returns>System.String containing elements from specified IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.Join``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            <para>Returns all elements of this IEnumerable&lt;T&gt; in a single System.String.</para>
+            <para>Elements are separated by a comma.</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="enumerable">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <param name="selector"></param>
+            <returns>System.String containing elements from specified IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.Join``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.String)">
+            <summary>
+            <para>Returns all elements of this IEnumerable&lt;T&gt; in a single System.String.</para>
+            <para>Elements are separated by the specified separator.</para>
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="enumerable">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <param name="selector"></param>
+            <param name="separator"></param>
+            <returns>System.String containing elements from specified IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.ToDataTable``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            Creates and returns a System.Data.DataTable from the specified System.Collections.Generic.IEnumerable&lt;T&gt;.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="enumerable">This instance of System.Collections.Generic.IEnumerable&lt;T&gt;.</param>
+            <param name="tableName">The value to set for the DataTable's Name property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.ToQueue``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a System.Collections.Generic.Queue&lt;T&gt; from an System.Collections.Generic.IEnumerable&lt;T&gt;.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The System.Collections.Generic.IEnumerable&lt;T&gt; to create a System.Collections.Generic.Queue&lt;T&gt; from</param>
+            <returns>A System.Collections.Generic.Queue&lt;T&gt; that contains elements from the input sequence</returns>
+        </member>
+        <member name="M:Extenso.Collections.EnumerableExtensions.ToStack``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates a System.Collections.Generic.Stack&lt;T&gt; from an System.Collections.Generic.IEnumerable&lt;T&gt;.
+            </summary>
+            <typeparam name="TSource">The type of the elements of source.</typeparam>
+            <param name="source">The System.Collections.Generic.IEnumerable&lt;T&gt; to create a System.Collections.Generic.Stack&lt;T&gt; from</param>
+            <returns>A System.Collections.Generic.Stack&lt;T&gt; that contains elements from the input sequence</returns>
+        </member>
+        <member name="M:Extenso.DateTimeExtensions.BeginningThisMonth(System.DateTime)">
+             <summary>
+             Gets the beginning of the current month - including time.
+            
+             </summary>
+             <param name="source">The date time object being extended..</param>
+             <returns>
+             Beginning of the current month.
+             </returns>
+        </member>
+        <member name="M:Extenso.DateTimeExtensions.BeginningThisWeek(System.DateTime)">
+             <summary>
+             Gets the beginning of the current week - including time.
+            
+             </summary>
+             <param name="source">The date time object being extended..</param>
+             <returns>
+             Beginning of the current week.
+             </returns>
+        </member>
+        <member name="M:Extenso.GuidExtensions.IsNullOrEmpty(System.Guid)">
+            <summary>
+            Indicates whether the specified System.Guid is null or empty
+            </summary>
+            <param name="guid">This instance of System.Guid.</param>
+            <returns>true if the System.Guid is null or an empty Guid (00000000-0000-0000-0000-000000000000); otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.Int32Extensions.IsMultipleOf(System.Int32,System.Int32)">
+            <summary>
+            Indicates whether this System.Int32 is a multiple of the specified System.Int32.
+            </summary>
+            <param name="i">This instance of System.Int32.</param>
+            <param name="numberToCompare">The System.Int32 to compare with</param>
+            <returns>true if this System.Int32 is a multiple of the specified System.Int32; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.BinaryDeserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the Binary data contained in the specified file.
+            </summary>
+            <typeparam name="T">The type of System.Object to be deserialized.</typeparam>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The System.Object being deserialized.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.DeflateCompress(System.IO.FileInfo)">
+            <summary>
+            Compresses the file using the Deflate algorithm and returns the name of the compressed file.
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The name of the new compressed file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.DeflateDecompress(System.IO.FileInfo)">
+            <summary>
+            Decompresses the file using the Deflate algorithm and returns the name of the decompressed file.
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The name of the new decompressed file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GetBytes(System.IO.FileInfo,System.Int64)">
+            <summary>
+            Gets the file data as an array of bytes
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <param name="maxBufferSize">The buffer size.</param>
+            <returns>System.Byte[] representing the file data.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GetFileSizeInKiloBytes(System.IO.FileInfo)">
+            <summary>
+            Gets the file size in KiloBytes
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>System.Double representing the size of the file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GetFileSizeInMegaBytes(System.IO.FileInfo)">
+            <summary>
+            Gets the file size in MegaBytes
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>System.Double representing the size of the file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GetFileSizeInGigaBytes(System.IO.FileInfo)">
+            <summary>
+            Gets the file size in GigaBytes
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>System.Double representing the size of the file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GZipCompress(System.IO.FileInfo)">
+            <summary>
+            Compresses the file using the GZip algorithm and returns the name of the compressed file.
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The name of the new compressed file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.GZipDecompress(System.IO.FileInfo)">
+            <summary>
+            Decompresses the file using the GZip algorithm and returns the name of the decompressed file.
+            </summary>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The name of the new decompressed file.</returns>
+        </member>
+        <member name="M:Extenso.IO.FileInfoExtensions.XmlDeserialize``1(System.IO.FileInfo)">
+            <summary>
+            Deserializes the XML data contained in the specified file.
+            </summary>
+            <typeparam name="T">The type of System.Object to be deserialized.</typeparam>
+            <param name="fileInfo">This System.IO.FileInfo instance.</param>
+            <returns>The System.Object being deserialized.</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.Base64Serialize``1(``0)">
+            <summary>
+            Serializes the specified System.Object and returns the data.
+            </summary>
+            <typeparam name="T">This item's type</typeparam>
+            <param name="item">This item</param>
+            <returns>Serialized data of specified System.Object as a Base64 encoded String</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.BinarySerialize``1(``0)">
+            <summary>
+            Serializes the specified System.Object and returns the data.
+            </summary>
+            <typeparam name="T">This item's type</typeparam>
+            <param name="item">This item</param>
+            <returns>Serialized data of specified System.Object as System.Byte[]</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.BinarySerialize``1(``0,System.String)">
+            <summary>
+            Serializes the specified System.Object and writes the data to the specified file.
+            </summary>
+            <typeparam name="T">This item's type</typeparam>
+            <param name="item">This item</param>
+            <param name="fileName">The name of the file to save the serialized data to.</param>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.DeepClone``1(``0)">
+            <summary>
+            Creates a deep clone of the current System.Object.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item">The original object.</param>
+            <returns>A clone of the original object</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.In``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Determines whether this T is contained in the specified 'IEnumerable of T'
+            </summary>
+            <typeparam name="T">This System.Object's type</typeparam>
+            <param name="t">This item</param>
+            <param name="enumerable">The 'IEnumerable of T' to check</param>
+            <returns>true if enumerable contains this item, otherwise false.</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.In``1(``0,``0[])">
+            <summary>
+            Determines whether this T is contained in the specified values
+            </summary>
+            <typeparam name="T">This System.Object's type</typeparam>
+            <param name="t">This item</param>
+            <param name="items">The values to compare</param>
+            <returns>true if items contains this item, otherwise false.</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.XmlSerialize``1(``0,System.String,System.Boolean,System.Boolean,System.Xml.Serialization.XmlSerializerNamespaces,System.Text.Encoding)">
+            <summary>
+            <para>Serializes the specified System.Object and writes the XML document</para>
+            <para>to the specified file.</para>
+            </summary>
+            <typeparam name="T">This item's type</typeparam>
+            <param name="item">This item</param>
+            <param name="fileName">The file to which you want to write.</param>
+            <param name="omitXmlDeclaration">False to keep the XML declaration. Otherwise, it will be removed.</param>
+            <param name="removeNamespaces">
+                <para>Specify whether to remove xml namespaces.</para>para>
+                <para>If your object has any XmlInclude attributes, then set this to false</para>
+            </param>
+            <param name="xmlns">If not null, "removeNamespaces" is ignored and the provided namespaces are used.</param>
+            <param name="encoding">Specify encoding, if required.</param>
+            <returns>true if successful, otherwise false.</returns>
+        </member>
+        <member name="M:Extenso.ObjectExtensions.XmlSerialize``1(``0,System.Boolean,System.Boolean,System.Xml.Serialization.XmlSerializerNamespaces,System.Text.Encoding)">
+            <summary>
+            Serializes the specified System.Object and returns the serialized XML
+            </summary>
+            <typeparam name="T">This item's type</typeparam>
+            <param name="item">This item</param>
+            <param name="omitXmlDeclaration">False to keep the XML declaration. Otherwise, it will be removed.</param>
+            <param name="removeNamespaces">
+                <para>Specify whether to remove xml namespaces.</para>para>
+                <para>If your object has any XmlInclude attributes, then set this to false</para>
+            </param>
+            <param name="xmlns">If not null, "removeNamespaces" is ignored and the provided namespaces are used.</param>
+            <param name="encoding">Specify encoding, if required.</param>
+            <returns>Serialized XML for specified System.Object</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextBoolean(System.Random)">
+            <summary>
+            Returns a random System.Boolean.
+            </summary>
+            <param name="random">This instance of System.Random.</param>
+            <returns>System.Boolean</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextColor(System.Random)">
+            <summary>
+            Returns a random System.Drawing.Color.
+            </summary>
+            <param name="random">This instance of System.Random.</param>
+            <returns>System.Drawing.Color</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextColorWithAlpha(System.Random)">
+            <summary>
+            Returns a random System.Drawing.Color.
+            </summary>
+            <param name="random">This instance of System.Random.</param>
+            <returns>System.Drawing.Color</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextDateTime(System.Random)">
+            <summary>
+            Returns a random System.DateTime.
+            </summary>
+            <param name="random">This instance of System.Random.</param>
+            <returns>System.DateTime</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextDateTime(System.Random,System.Int32,System.Int32)">
+            <summary>
+            Returns a random System.DateTime between the specified minimum and maximum years.
+            </summary>
+            <param name="random">This instance of System.Random.</param>
+            <param name="minYear"></param>
+            <param name="maxYear"></param>
+            <returns>System.DateTime.</returns>
+        </member>
+        <member name="M:Extenso.RandomExtensions.NextFrom``1(System.Random,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Returns a random element from the specified IEnumerable&lt;T&gt;.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="random">This instance of System.Random.</param>
+            <param name="enumerable"></param>
+            <returns>Object of type &lt;T&gt; from specified IEnumerable&lt;T&gt;.</returns>
+        </member>
+        <member name="M:Extenso.Reflection.ObjectExtensions.GetPrivatePropertyValue``1(``0,System.String)">
+            <summary>
+            <para>Returns a private Property Value from the specified Object.</para>
+            <para>Throws an ArgumentOutOfRangeException if the Property is not found.</para>
+            </summary>
+            <typeparam name="T">The type of System.Object.</typeparam>
+            <param name="item">The System.Object.</param>
+            <param name="propertyName">The name of the property to get the value for.</param>
+            <returns>The value of the specified property from the specified System.Object.</returns>
+        </member>
+        <member name="M:Extenso.Reflection.ObjectExtensions.GetPrivateFieldValue``1(``0,System.String)">
+            <summary>
+            <para>Returns a private Field Value from the specified Object.</para>
+            <para>Throws an ArgumentOutOfRangeException if the Field is not found.</para>
+            </summary>
+            <typeparam name="T">The type of System.Object.</typeparam>
+            <param name="item">The System.Object.</param>
+            <param name="fieldName">The name of the field to get the value for.</param>
+            <returns>The value of the specified field from the specified System.Object.</returns>
+        </member>
+        <member name="M:Extenso.Reflection.ObjectExtensions.SetPrivatePropertyValue``2(``0,System.String,``1)">
+            <summary>
+            <para>Sets the value for the specified private Property on the specified Object.</para>
+            <para>Throws an ArgumentOutOfRangeException if the Property is not found.</para>
+            </summary>
+            <typeparam name="T">The type of System.Object.</typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="item">The System.Object.</param>
+            <param name="propertyName">The name of the property to set the value for.</param>
+            <param name="value">The value to set for the specified property on the specified System.Object.</param>
+        </member>
+        <member name="M:Extenso.Reflection.ObjectExtensions.SetPrivateFieldValue``2(``0,System.String,``1)">
+            <summary>
+            <para>Sets the value for the specified private Field on the specified Object.</para>
+            <para>Throws an ArgumentOutOfRangeException if the Field is not found.</para>
+            </summary>
+            <typeparam name="T">The type of System.Object.</typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="item">The System.Object.</param>
+            <param name="fieldName">The name of the field to set the value for.</param>
+            <param name="value">The value to set for the specified field on the specified System.Object.</param>
+        </member>
+        <member name="M:Extenso.StringExtensions.AddDoubleQuotes(System.String)">
+            <summary>
+            Adds a pair of double quotes to the specified System.String.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.AddSingleQuotes(System.String)">
+            <summary>
+            Adds a pair of single quotes to the specified System.String.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Append(System.String,System.String[])">
+            <summary>
+            Adds the specified System.String values to the end of this System.String.
+            </summary>
+            <param name="s"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Append(System.String,System.Object[])">
+            <summary>
+            Adds the specified System.Object values to the end of this System.String.
+            </summary>
+            <param name="s"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Between(System.String,System.Char,System.Char)">
+            <summary>
+            Returns the characters between and exclusive of the two search characters; [from] and [to].
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.CharacterCount(System.String,System.Char)">
+            <summary>
+            Returns the number of times that the specified character appears in this System.String.
+            </summary>
+            <param name="s"></param>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Contains(System.String,System.String,System.StringComparison)">
+            <summary>
+            <para>Returns a value indicating whether the specified System.String object occurs</para>
+            <para>within this string.</para>
+            </summary>
+            <param name="s">This instance of System.String.</param>
+            <param name="value">The System.String object to seek.</param>
+            <param name="comparisonType">One of the System.StringComparison values.</param>
+            <returns>
+            <para>true if the value parameter occurs within this string, or if value is the</para>
+            <para>empty string (""); otherwise, false.</para>
+            </returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ContainsAll(System.String,System.String[])">
+            <summary>
+            <para>Returns a value indicating whether all of the specified System.String objects</para>
+            <para>occur within this string.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The strings to seek</param>
+            <returns>true if all values are contained in this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ContainsAll(System.String,System.Char[])">
+            <summary>
+            <para>Returns a value indicating whether all of the specified System.Char objects</para>
+            <para>occur within this string.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The characters to seek</param>
+            <returns>true if all values are contained in this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ContainsAny(System.String,System.String[])">
+            <summary>
+            <para>Returns a value indicating whether any of the specified System.String objects</para>
+            <para>occur within this string.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The strings to seek</param>
+            <returns>true if any value is contained in this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ContainsAny(System.String,System.Char[])">
+            <summary>
+            <para>Returns a value indicating whether any of the specified System.Char objects</para>
+            <para>occur within this string.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The characters to seek</param>
+            <returns>true if any value is contained in this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ContainsAny(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            <para>Returns a value indicating whether any of the System.String objects from the</para>
+            <para>specified IEnumerable&lt;string&gt; occur within this string.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The strings to seek</param>
+            <returns>true if any value is contained in this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.EndsWithAny(System.String,System.String[])">
+            <summary>
+            <para>Determines whether the end of this string instance matches</para>
+            <para>one of the specified strings.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The strings to compare</param>
+            <returns>true if any value matches the end of this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.HtmlDecode(System.String)">
+            <summary>
+            Converts a string that has been HTML-encoded for HTTP transmission into a decoded string.
+            </summary>
+            <param name="s">The string to decode.</param>
+            <returns>A decoded string</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.HtmlEncode(System.String)">
+            <summary>
+            Converts a string to an HTML-encoded string.
+            </summary>
+            <param name="s">The string to encode.</param>
+            <returns>An encoded string.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.HtmlStrip(System.String)">
+            <summary>
+            Removes all Html tags from the specified System.String
+            </summary>
+            <param name="s">The string to strip of html tags.</param>
+            <returns>A System.String without html tags</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.IsLetter(System.Char)">
+            <summary>
+            Whether the char is a letter between A and Z or not
+            </summary>
+        </member>
+        <member name="M:Extenso.StringExtensions.IsNullOrWhiteSpace(System.String)">
+            <summary>
+            <para>Indicates whether a specified string is null, empty, or consists only of</para>
+            <para>white-space characters.</para>
+            </summary>
+            <param name="value">The string to test.</param>
+            <returns>
+            <para>true if the value parameter is null or System.String.Empty, or if value consists</para>
+            <para>exclusively of white-space characters.</para>
+            </returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Left(System.String,System.Int32)">
+            <summary>
+            Gets specified number of characters from left of string
+            </summary>
+            <param name="s"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.LeftOf(System.String,System.Char)">
+            <summary>
+            Returns all characters to the left of the first occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.LeftOf(System.String,System.Char,System.Int32)">
+            <summary>
+            Returns all characters to the left of the [n]th occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.LeftOf(System.String,System.String)">
+            <summary>
+            Returns all characters to the left of the first occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.LeftOfLastIndexOf(System.String,System.Char)">
+            <summary>
+            Returns all characters to the left of the last occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.LeftOfLastIndexOf(System.String,System.String)">
+            <summary>
+            Returns all characters to the left of the last occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Prepend(System.String,System.String[])">
+            <summary>
+            Adds the specified System.String values to the beginning of this System.String.
+            </summary>
+            <param name="s"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Prepend(System.String,System.Object[])">
+            <summary>
+            Adds the specified System.Object values to the beginning of this System.String.
+            </summary>
+            <param name="s"></param>
+            <param name="values"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RegexEscape(System.String)">
+            <summary>
+            <para>Escapes a minimal set of metacharacters (\, *, +, ?, |, {, [, (,), ^, $,.,</para>
+            <para>#, and white space) by replacing them with their escape codes.</para>
+            </summary>
+            <param name="s">The input string containing the text to convert.</param>
+            <returns>A string of characters with any metacharacters converted to their escaped form.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RegexUnescape(System.String)">
+            <summary>
+            Unescapes any escaped characters in the input string (for Regex).
+            </summary>
+            <param name="s">The input string containing the text to convert.</param>
+            <returns>A string of characters with any escaped characters converted to their unescaped form.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Repeat(System.String,System.Byte)">
+            <summary>
+            <para>Takes a System.String and returns a new System.String of the original</para>
+            <para>repeated [n] number of times</para>
+            </summary>
+            <param name="s">The String</param>
+            <param name="count">The number of times to repeat the String</param>
+            <returns>A new System.String of the original repeated [n] number of times</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Replace(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            <para>Replaces all occurrences of the specified System.Strings in this instance</para>
+            <para>with specified System.Strings from the given System.Collections.Generic.IDictionary.</para>
+            </summary>
+            <param name="str">This System.String instance</param>
+            <param name="replacements">The given IDictionary. Keys found in this System.String will be replaced by corresponding Values</param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.Right(System.String,System.Int32)">
+            <summary>
+            Gets specified number of characters from right of string
+            </summary>
+            <param name="s"></param>
+            <param name="count"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RightOf(System.String,System.Char)">
+            <summary>
+            Returns all characters to the right of the first occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RightOf(System.String,System.Char,System.Int32)">
+            <summary>
+            Returns all characters to the right of the [n]th occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <param name="n"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RightOf(System.String,System.String)">
+            <summary>
+            Returns all characters to the right of the first occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RightOfLastIndexOf(System.String,System.Char)">
+            <summary>
+            Returns all characters to the right of the last occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.RightOfLastIndexOf(System.String,System.String)">
+            <summary>
+            Returns all characters to the right of the last occurrence of [value] in this System.String.
+            </summary>
+            <param name="s">This System.String.</param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.SpacePascal(System.String)">
+            <summary>
+            <para>Give Pascal Text and will return separate words. For example:</para>
+            <para>MyPascalText will become "My Pascal Text"</para>
+            </summary>
+            <param name="pascalText"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.StartsWithAny(System.String,System.String[])">
+            <summary>
+            <para>Determines whether the beginning of this string instance matches</para>
+            <para>one of the specified strings.</para>
+            </summary>
+            <param name="s">The string</param>
+            <param name="values">The strings to compare</param>
+            <returns>true if any value matches the beginning of this string; otherwise, false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ToFile(System.String,System.String)">
+            <summary>
+            Writes the instance of System.String to a new file or overwrites the existing file.
+            </summary>
+            <param name="s">The string to write to file.</param>
+            <param name="filePath">The file to write the string to.</param>
+            <returns>true if successful,; otherwise false.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ToLines(System.String)">
+            <summary>
+            Splits the given string by new line characters and returns the result in an IEnumerable&lt;string&gt;.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ToPascalCase(System.String)">
+            <summary>
+             Converts the specified string to Pascal Case.
+            </summary>
+            <param name="s"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ToTitleCase(System.String)">
+            <summary>
+            Converts the specified string to Title Case using the Current Culture.
+            </summary>
+            <param name="s">The string to convert.</param>
+            <returns>The specified string converted to Title Case.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.ToTitleCase(System.String,System.Globalization.CultureInfo)">
+            <summary>
+            Converts the specified string to Title Case.
+            </summary>
+            <param name="s">The string to convert.</param>
+            <param name="cultureInfo">The System.Globalization.CultureInfo to use for converting to Title Case.</param>
+            <returns>The specified string converted to Title Case.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.TripleDESEncrypt(System.String,System.Text.Encoding,System.Byte[],System.Byte[])">
+            <summary>
+            Encrypts the specified System.String using the TripleDES symmetric algorithm and returns the data as a System.Byte[].
+            </summary>
+            <param name="s">The System.String to encrypt.</param>
+            <param name="encoding">The System.Text.Encoding to use.</param>
+            <param name="key">The secret key to use for the symmetric algorithm.</param>
+            <param name="initializationVector">The initialization vector to use for the symmetric algorithm.</param>
+            <returns>Encryped System.String as a System.Byte[].</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.UrlDecode(System.String)">
+            <summary>
+            Converts a string that has been encoded for transmission in a URL into a decoded string.
+            </summary>
+            <param name="s">The string to decode.</param>
+            <returns>A decoded string.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.UrlEncode(System.String)">
+            <summary>
+            Encodes a URL string.
+            </summary>
+            <param name="s">The text to encode.</param>
+            <returns>An encoded string.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.WordCount(System.String)">
+            <summary>
+            Gets the number of words in the specified System.String.
+            </summary>
+            <param name="s">The string to get a word count from.</param>
+            <returns>A System.Int32 specifying the number of words in the given System.String.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.XmlDeserialize``1(System.String)">
+            <summary>
+            Deserializes the XML data contained by the specified System.String
+            </summary>
+            <typeparam name="T">The type of System.Object to be deserialized</typeparam>
+            <param name="s">The System.String containing XML data</param>
+            <returns>The System.Object being deserialized.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.XmlDeserialize(System.String,System.Type)">
+            <summary>
+            Deserializes the XML data contained by the specified System.String
+            </summary>
+            <param name="s">The System.String containing XML data</param>
+            <param name="type"></param>
+            <returns>The System.Object being deserialized.</returns>
+        </member>
+        <member name="M:Extenso.StringExtensions.JavaScriptStringEncode(System.String)">
+            <summary>
+            Encodes a string for JavaScript.
+            </summary>
+            <param name="value">A string to encode.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
